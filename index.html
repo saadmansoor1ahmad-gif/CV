@@ -1,354 +1,707 @@
 <!DOCTYPE html>
+2
 <html lang="en">
+3
 <head>
+4
 <meta charset="UTF-8">
+5
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
+6
+ 
+7
 <title>Saad Ahmad</title>
-
+8
+ 
+9
 https://fonts.googleapis.com
+10
 https://fonts.gstatic.com
-
+11
+ 
+12
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;900&display=swap
-
+13
+ 
+14
 <style>
-
+15
+ 
+16
 :root{
-    --bg:#080b14;
-    --card:rgba(255,255,255,.05);
-    --border:rgba(255,255,255,.08);
-    --text:#ffffff;
-    --muted:#9ca3af;
+17
+--bg:#080b14;
+18
+--card:rgba(255,255,255,.05);
+19
+--border:rgba(255,255,255,.08);
+20
+--text:#ffffff;
+21
+--muted:#9ca3af;
+22
 }
-
+23
+ 
+24
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+25
+margin:0;
+26
+padding:0;
+27
+box-sizing:border-box;
+28
 }
-
+29
+ 
+30
 body{
-    font-family:Inter,sans-serif;
-    background:#080b14;
-    color:white;
-    overflow-x:hidden;
+31
+font-family:Inter,sans-serif;
+32
+background:#080b14;
+33
+color:white;
+34
+overflow-x:hidden;
+35
 }
-
+36
+ 
+37
 body::before{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:#2563eb;
-    border-radius:50%;
-    filter:blur(180px);
-    opacity:.25;
-    top:-150px;
-    right:-100px;
+38
+content:"";
+39
+position:fixed;
+40
+width:500px;
+41
+height:500px;
+42
+background:#2563eb;
+43
+border-radius:50%;
+44
+filter:blur(180px);
+45
+opacity:.25;
+46
+top:-150px;
+47
+right:-100px;
+48
 }
-
+49
+ 
+50
 body::after{
-    content:"";
-    position:fixed;
-    width:400px;
-    height:400px;
-    background:#7c3aed;
-    border-radius:50%;
-    filter:blur(180px);
-    opacity:.25;
-    bottom:-150px;
-    left:-100px;
+51
+content:"";
+52
+position:fixed;
+53
+width:400px;
+54
+height:400px;
+55
+background:#7c3aed;
+56
+border-radius:50%;
+57
+filter:blur(180px);
+58
+opacity:.25;
+59
+bottom:-150px;
+60
+left:-100px;
+61
 }
-
+62
+ 
+63
 nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    padding:24px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    backdrop-filter:blur(20px);
-    background:rgba(8,11,20,.6);
-    border-bottom:1px solid rgba(255,255,255,.05);
-    z-index:999;
+64
+position:fixed;
+65
+top:0;
+66
+width:100%;
+67
+padding:24px 8%;
+68
+display:flex;
+69
+justify-content:space-between;
+70
+align-items:center;
+71
+backdrop-filter:blur(20px);
+72
+background:rgba(8,11,20,.6);
+73
+border-bottom:1px solid rgba(255,255,255,.05);
+74
+z-index:999;
+75
 }
-
+76
+ 
+77
 .logo{
-    font-size:1.2rem;
-    font-weight:800;
-    letter-spacing:1px;
+78
+font-size:1.2rem;
+79
+font-weight:800;
+80
+letter-spacing:1px;
+81
 }
-
+82
+ 
+83
 nav ul{
-    display:flex;
-    list-style:none;
-    gap:30px;
+84
+display:flex;
+85
+list-style:none;
+86
+gap:30px;
+87
 }
-
+88
+ 
+89
 nav a{
-    color:white;
-    text-decoration:none;
-    opacity:.8;
+90
+color:white;
+91
+text-decoration:none;
+92
+opacity:.8;
+93
 }
-
+94
+ 
+95
 .hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    padding:0 8%;
+96
+min-height:100vh;
+97
+display:flex;
+98
+align-items:center;
+99
+padding:0 8%;
+100
 }
-
+101
+ 
+102
 .hero-content{
-    max-width:900px;
-    position:relative;
-    z-index:5;
+103
+max-width:900px;
+104
+position:relative;
+105
+z-index:5;
+106
 }
-
+107
+ 
+108
 .tag{
-    color:#60a5fa;
-    font-weight:600;
-    margin-bottom:20px;
-    text-transform:uppercase;
-    letter-spacing:2px;
+109
+color:#60a5fa;
+110
+font-weight:600;
+111
+margin-bottom:20px;
+112
+text-transform:uppercase;
+113
+letter-spacing:2px;
+114
 }
-
+115
+ 
+116
 .hero h1{
-    font-size:min(7vw,90px);
-    line-height:1;
-    font-weight:900;
-    margin-bottom:30px;
+117
+font-size:min(7vw,90px);
+118
+line-height:1;
+119
+font-weight:900;
+120
+margin-bottom:30px;
+121
 }
-
+122
+ 
+123
 .gradient{
-    background:linear-gradient(
-        90deg,
-        #3b82f6,
-        #8b5cf6
-    );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+124
+background:linear-gradient(
+125
+90deg,
+126
+#3b82f6,
+127
+#8b5cf6
+128
+);
+129
+ 
+130
+-webkit-background-clip:text;
+131
+-webkit-text-fill-color:transparent;
+132
 }
-
+133
+ 
+134
 .hero p{
-    max-width:700px;
-    color:#a1a1aa;
-    font-size:1.2rem;
-    line-height:1.8;
+135
+max-width:700px;
+136
+color:#a1a1aa;
+137
+font-size:1.2rem;
+138
+line-height:1.8;
+139
 }
-
+140
+ 
+141
 .buttons{
-    margin-top:40px;
-    display:flex;
-    gap:15px;
+142
+margin-top:40px;
+143
+display:flex;
+144
+gap:15px;
+145
 }
-
+146
+ 
+147
 .btn{
-    padding:16px 32px;
-    border-radius:14px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.3s;
+148
+padding:16px 32px;
+149
+border-radius:14px;
+150
+text-decoration:none;
+151
+font-weight:600;
+152
+transition:.3s;
+153
 }
-
+154
+ 
+155
 .btn-primary{
-    color:white;
-    background:linear-gradient(
-        135deg,
-        #2563eb,
-        #8b5cf6
-    );
+156
+color:white;
+157
+background:linear-gradient(
+158
+135deg,
+159
+#2563eb,
+160
+#8b5cf6
+161
+);
+162
 }
-
+163
+ 
+164
 .btn-secondary{
-    color:white;
-    border:1px solid rgba(255,255,255,.1);
-    background:rgba(255,255,255,.03);
+165
+color:white;
+166
+border:1px solid rgba(255,255,255,.1);
+167
+background:rgba(255,255,255,.03);
+168
 }
-
+169
+ 
+170
 .btn:hover{
-    transform:translateY(-4px);
+171
+transform:translateY(-4px);
+172
 }
-
+173
+ 
+174
 .section{
-    padding:120px 8%;
-    position:relative;
-    z-index:5;
+175
+padding:120px 8%;
+176
+position:relative;
+177
+z-index:5;
+178
 }
-
+179
+ 
+180
 .section h2{
-    font-size:3rem;
-    margin-bottom:50px;
+181
+font-size:3rem;
+182
+margin-bottom:50px;
+183
 }
-
+184
+ 
+185
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
+186
+display:grid;
+187
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+188
+gap:25px;
+189
 }
-
+190
+ 
+191
 .card{
-    padding:35px;
-    border-radius:24px;
-
-    background:rgba(255,255,255,.04);
-
-    backdrop-filter:blur(20px);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    transition:.3s;
+192
+padding:35px;
+193
+border-radius:24px;
+194
+ 
+195
+background:rgba(255,255,255,.04);
+196
+ 
+197
+backdrop-filter:blur(20px);
+198
+ 
+199
+border:1px solid rgba(255,255,255,.08);
+200
+ 
+201
+transition:.3s;
+202
 }
-
+203
+ 
+204
 .card:hover{
-    transform:translateY(-8px);
-    border-color:#3b82f6;
+205
+transform:translateY(-8px);
+206
+border-color:#3b82f6;
+207
 }
-
+208
+ 
+209
 .card h3{
-    margin-bottom:15px;
+210
+margin-bottom:15px;
+211
 }
-
+212
+ 
+213
 .card p{
-    color:#9ca3af;
-    line-height:1.7;
+214
+color:#9ca3af;
+215
+line-height:1.7;
+216
 }
-
+217
+ 
+218
 .footer{
-    text-align:center;
-    padding:60px 20px;
-    color:#9ca3af;
+219
+text-align:center;
+220
+padding:60px 20px;
+221
+color:#9ca3af;
+222
 }
-
+223
+ 
+224
 @media(max-width:768px){
-
-    nav ul{
-        display:none;
-    }
-
-    .hero h1{
-        font-size:54px;
-    }
-
+225
+ 
+226
+nav ul{
+227
+display:none;
+228
 }
-
+229
+ 
+230
+.hero h1{
+231
+font-size:54px;
+232
+}
+233
+ 
+234
+}
+235
+ 
+236
 </style>
+237
 </head>
-
+238
+ 
+239
 <body>
-
+240
+ 
+241
 <nav>
+242
 <div class="logo">SAAD AHMAD</div>
-
+243
+ 
+244
 <ul>
+245
 <li>#servicesServices</a></li>
+246
 <li>#projectsProjects</a></li>
+247
 <li>#contactContact</a></li>
+248
 </ul>
+249
 </nav>
-
+250
+ 
+251
 <section class="hero">
-
+252
+ 
+253
 <div class="hero-content">
-
+254
+ 
+255
 <div class="tag">
+256
 Business Analysis • Data • Consultancy
+257
 </div>
-
+258
+ 
+259
 <h1>
+260
 Helping Businesses Make
+261
 <span class="gradient">
+262
 Better Decisions
+263
 </span>
+264
 </h1>
-
+265
+ 
+266
 <p>
+267
 Premium consultancy website placeholder text.
+268
 Replace this later with whatever positioning and messaging you want.
+269
 Right now we're focused only on getting the visual style right.
+270
 </p>
-
+271
+ 
+272
 <div class="buttons">
-
+273
+ 
+274
 #services
+275
 Explore Services
+276
 </a>
-
+277
+ 
+278
 #contact
+279
 Get In Touch
+280
 </a>
-
+281
+ 
+282
 </div>
-
+283
+ 
+284
 </div>
-
+285
+ 
+286
 </section>
-
+287
+ 
+288
 <section class="section" id="services">
-
+289
+ 
+290
 <h2>Services</h2>
-
+291
+ 
+292
 <div class="grid">
-
+293
+ 
+294
 <div class="card">
+295
 <h3>Business Analysis</h3>
+296
 <p>Placeholder content.</p>
+297
 </div>
-
+298
+ 
+299
 <div class="card">
+300
 <h3>Data Analytics</h3>
+301
 <p>Placeholder content.</p>
+302
 </div>
-
+303
+ 
+304
 <div class="card">
+305
 <h3>Transformation</h3>
+306
 <p>Placeholder content.</p>
+307
 </div>
-
+308
+ 
+309
 </div>
-
+310
+ 
+311
 </section>
-
+312
+ 
+313
 <section class="section" id="projects">
-
+314
+ 
+315
 <h2>Projects</h2>
-
+316
+ 
+317
 <div class="grid">
-
+318
+ 
+319
 <div class="card">
+320
 <h3>Project One</h3>
+321
 <p>Placeholder content.</p>
+322
 </div>
-
+323
+ 
+324
 <div class="card">
+325
 <h3>Project Two</h3>
+326
 <p>Placeholder content.</p>
+327
 </div>
-
+328
+ 
+329
 <div class="card">
+330
 <h3>Project Three</h3>
+331
 <p>Placeholder content.</p>
+332
 </div>
-
+333
+ 
+334
 </div>
-
+335
+ 
+336
 </section>
-
+337
+ 
+338
 <section class="section" id="contact">
-
+339
+ 
+340
 <h2>Contact</h2>
-
+341
+ 
+342
 <div class="card">
+343
 <h3>Let's Talk</h3>
+344
 <p>Your email here.</p>
+345
 </div>
-
+346
+ 
+347
 </section>
-
+348
+ 
+349
 <div class="footer">
+350
 © 2026 Saad Ahmad
+351
 </div>
-
+352
+ 
+353
 </body>
+354
 </html>
