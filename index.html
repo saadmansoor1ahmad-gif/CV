@@ -1,707 +1,295 @@
 <!DOCTYPE html>
-2
 <html lang="en">
-3
 <head>
-4
-<meta charset="UTF-8">
-5
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-6
- 
-7
-<title>Saad Ahmad</title>
-8
- 
-9
-https://fonts.googleapis.com
-10
-https://fonts.gstatic.com
-11
- 
-12
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;900&display=swap
-13
- 
-14
-<style>
-15
- 
-16
-:root{
-17
---bg:#080b14;
-18
---card:rgba(255,255,255,.05);
-19
---border:rgba(255,255,255,.08);
-20
---text:#ffffff;
-21
---muted:#9ca3af;
-22
-}
-23
- 
-24
-*{
-25
-margin:0;
-26
-padding:0;
-27
-box-sizing:border-box;
-28
-}
-29
- 
-30
-body{
-31
-font-family:Inter,sans-serif;
-32
-background:#080b14;
-33
-color:white;
-34
-overflow-x:hidden;
-35
-}
-36
- 
-37
-body::before{
-38
-content:"";
-39
-position:fixed;
-40
-width:500px;
-41
-height:500px;
-42
-background:#2563eb;
-43
-border-radius:50%;
-44
-filter:blur(180px);
-45
-opacity:.25;
-46
-top:-150px;
-47
-right:-100px;
-48
-}
-49
- 
-50
-body::after{
-51
-content:"";
-52
-position:fixed;
-53
-width:400px;
-54
-height:400px;
-55
-background:#7c3aed;
-56
-border-radius:50%;
-57
-filter:blur(180px);
-58
-opacity:.25;
-59
-bottom:-150px;
-60
-left:-100px;
-61
-}
-62
- 
-63
-nav{
-64
-position:fixed;
-65
-top:0;
-66
-width:100%;
-67
-padding:24px 8%;
-68
-display:flex;
-69
-justify-content:space-between;
-70
-align-items:center;
-71
-backdrop-filter:blur(20px);
-72
-background:rgba(8,11,20,.6);
-73
-border-bottom:1px solid rgba(255,255,255,.05);
-74
-z-index:999;
-75
-}
-76
- 
-77
-.logo{
-78
-font-size:1.2rem;
-79
-font-weight:800;
-80
-letter-spacing:1px;
-81
-}
-82
- 
-83
-nav ul{
-84
-display:flex;
-85
-list-style:none;
-86
-gap:30px;
-87
-}
-88
- 
-89
-nav a{
-90
-color:white;
-91
-text-decoration:none;
-92
-opacity:.8;
-93
-}
-94
- 
-95
-.hero{
-96
-min-height:100vh;
-97
-display:flex;
-98
-align-items:center;
-99
-padding:0 8%;
-100
-}
-101
- 
-102
-.hero-content{
-103
-max-width:900px;
-104
-position:relative;
-105
-z-index:5;
-106
-}
-107
- 
-108
-.tag{
-109
-color:#60a5fa;
-110
-font-weight:600;
-111
-margin-bottom:20px;
-112
-text-transform:uppercase;
-113
-letter-spacing:2px;
-114
-}
-115
- 
-116
-.hero h1{
-117
-font-size:min(7vw,90px);
-118
-line-height:1;
-119
-font-weight:900;
-120
-margin-bottom:30px;
-121
-}
-122
- 
-123
-.gradient{
-124
-background:linear-gradient(
-125
-90deg,
-126
-#3b82f6,
-127
-#8b5cf6
-128
-);
-129
- 
-130
--webkit-background-clip:text;
-131
--webkit-text-fill-color:transparent;
-132
-}
-133
- 
-134
-.hero p{
-135
-max-width:700px;
-136
-color:#a1a1aa;
-137
-font-size:1.2rem;
-138
-line-height:1.8;
-139
-}
-140
- 
-141
-.buttons{
-142
-margin-top:40px;
-143
-display:flex;
-144
-gap:15px;
-145
-}
-146
- 
-147
-.btn{
-148
-padding:16px 32px;
-149
-border-radius:14px;
-150
-text-decoration:none;
-151
-font-weight:600;
-152
-transition:.3s;
-153
-}
-154
- 
-155
-.btn-primary{
-156
-color:white;
-157
-background:linear-gradient(
-158
-135deg,
-159
-#2563eb,
-160
-#8b5cf6
-161
-);
-162
-}
-163
- 
-164
-.btn-secondary{
-165
-color:white;
-166
-border:1px solid rgba(255,255,255,.1);
-167
-background:rgba(255,255,255,.03);
-168
-}
-169
- 
-170
-.btn:hover{
-171
-transform:translateY(-4px);
-172
-}
-173
- 
-174
-.section{
-175
-padding:120px 8%;
-176
-position:relative;
-177
-z-index:5;
-178
-}
-179
- 
-180
-.section h2{
-181
-font-size:3rem;
-182
-margin-bottom:50px;
-183
-}
-184
- 
-185
-.grid{
-186
-display:grid;
-187
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-188
-gap:25px;
-189
-}
-190
- 
-191
-.card{
-192
-padding:35px;
-193
-border-radius:24px;
-194
- 
-195
-background:rgba(255,255,255,.04);
-196
- 
-197
-backdrop-filter:blur(20px);
-198
- 
-199
-border:1px solid rgba(255,255,255,.08);
-200
- 
-201
-transition:.3s;
-202
-}
-203
- 
-204
-.card:hover{
-205
-transform:translateY(-8px);
-206
-border-color:#3b82f6;
-207
-}
-208
- 
-209
-.card h3{
-210
-margin-bottom:15px;
-211
-}
-212
- 
-213
-.card p{
-214
-color:#9ca3af;
-215
-line-height:1.7;
-216
-}
-217
- 
-218
-.footer{
-219
-text-align:center;
-220
-padding:60px 20px;
-221
-color:#9ca3af;
-222
-}
-223
- 
-224
-@media(max-width:768px){
-225
- 
-226
-nav ul{
-227
-display:none;
-228
-}
-229
- 
-230
-.hero h1{
-231
-font-size:54px;
-232
-}
-233
- 
-234
-}
-235
- 
-236
-</style>
-237
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saad Ahmad – Finance Director | ACCA</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)),
+                url('https://wallpapercat.com/w/full/8/c/f/1421339-3840x2160-desktop-4k-city-skylines-background-image.jpg')
+                no-repeat center center fixed;
+            background-size: cover;
+            color: #222222;
+            overflow-x: hidden;
+        }
+
+        /* Premium Header */
+        header {
+            background: linear-gradient(90deg, #0a0f24, #16335c);
+            color: white;
+            padding: 70px 20px 80px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            border-bottom: 4px solid #4a6fa5;
+        }
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+        header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        /* Layout */
+        section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px 60px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Section Headings */
+        h2 {
+            border-left: 5px solid #4a6fa5;
+            padding-left: 12px;
+            margin: 45px 0 20px;
+            font-size: 28px;
+            color: #dbe7ff;
+            letter-spacing: 0.3px;
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(255, 255, 255, 0.82);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+        }
+
+        .card p,
+        .card li {
+            color: #222222;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #16335c;
+            font-size: 20px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        /* Download Button */
+        .download-btn {
+            display: inline-block;
+            background: #6698de;
+            color: rgb(255, 255, 255);
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .download-btn:hover {
+            background: #1e2e71;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0f24;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 20px;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            border-top: 3px solid #4a6fa5;
+        }
+
+        .contact a {
+            color: #273067;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* TABLET */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 34px;
+            }
+            header p {
+                font-size: 16px;
+            }
+            h2 {
+                font-size: 22px;
+                margin: 30px 0 15px;
+            }
+            .card {
+                padding: 18px;
+                border-radius: 10px;
+            }
+            .card p,
+            .card li {
+                font-size: 15px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            section {
+                padding: 0 15px 40px;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 480px) {
+            header {
+                padding: 50px 15px 60px;
+            }
+            header h1 {
+                font-size: 28px;
+            }
+            header p {
+                font-size: 14px;
+            }
+            .card {
+                padding: 15px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
-238
- 
-239
+
 <body>
-240
- 
-241
-<nav>
-242
-<div class="logo">SAAD AHMAD</div>
-243
- 
-244
-<ul>
-245
-<li>#servicesServices</a></li>
-246
-<li>#projectsProjects</a></li>
-247
-<li>#contactContact</a></li>
-248
-</ul>
-249
-</nav>
-250
- 
-251
-<section class="hero">
-252
- 
-253
-<div class="hero-content">
-254
- 
-255
-<div class="tag">
-256
-Business Analysis • Data • Consultancy
-257
-</div>
-258
- 
-259
-<h1>
-260
-Helping Businesses Make
-261
-<span class="gradient">
-262
-Better Decisions
-263
-</span>
-264
-</h1>
-265
- 
-266
-<p>
-267
-Premium consultancy website placeholder text.
-268
-Replace this later with whatever positioning and messaging you want.
-269
-Right now we're focused only on getting the visual style right.
-270
-</p>
-271
- 
-272
-<div class="buttons">
-273
- 
-274
-#services
-275
-Explore Services
-276
-</a>
-277
- 
-278
-#contact
-279
-Get In Touch
-280
-</a>
-281
- 
-282
-</div>
-283
- 
-284
-</div>
-285
- 
-286
+
+<header>
+    <h1>Saad Ahmad, ACCA</h1>
+    <p>Finance Director | CFO-Level Leader | FP&A | Governance | Transformation</p>
+</header>
+
+<section>
+    <h2>Executive Profile</h2>
+    <div class="card">
+        <p>Strategic CFO with over 18 years’ experience leading M&A, multinational scale‑ups and enterprise‑wide transformation. I partner with Boards to drive sustainable growth, embed financial discipline, and strengthen performance management frameworks that enable data‑driven decision‑making and long‑term value creation. </p>
+    </div>
+
+    <h2>Value Proposition</h2>
+    <div class="card">
+        <ul>
+            <li>Strategic Leadership & Business Partnering</li>
+            <li>Performance Management (FP&A) & Restructuring</li>
+            <li>Governance, Assurance, Risk & Compliance</li>
+            <li>Cash, Treasury & Investment</li>
+            <li>Transformation & Systems (SAP, MS Dynamics, SAGE)</li>
+        </ul>
+    </div>
+
+    <h2>Professional Experience</h2>
+
+    <div class="card">
+        <h3>Finance Director – Mondi Birmingham Ltd (2022–Present)</h3>
+        <ul>
+            <li>Led financial merger and integration with Mondi Group</li>
+            <li>Recruited & trained finance, costing and FP&A teams</li>
+            <li>Built management accounts & forecasting pack</li>
+            <li>Managed CAPEX £30m+ and treasury operations</li>
+            <li>Integrated ERP, MS Dynamics & Linux systems via APIs</li>
+            <li>Converted financial statements from UK GAAP to IFRS</li>
+            <li>Achieved clean audits throughout tenure</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Management Accountant – Q Care Ltd (2019–2021)</h3>
+        <ul>
+            <li>Produced monthly management accounts with actionable insights</li>
+            <li>Delivered GP, margin & cost analysis</li>
+            <li>Unlocked £200k savings through ERP optimisation</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Finance Manager – Trakker Middle East (2018–2019)</h3>
+        <ul>
+            <li>Oversight for enterprise clients incl. ADNOC & OPAL</li>
+            <li>Delivered 10% annual cost of sales savings</li>
+            <li>Designed ERP finance module securing $250k funding</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Finance Manager – N.E.T.S (2016–2018)</h3>
+        <ul>
+            <li>Built financial models for ROI & funding scenarios</li>
+            <li>Applied forensic accounting to strengthen controls</li>
+            <li>Tracked performance across $500m project portfolio</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Earlier Roles</h3>
+        <ul>
+            <li>Senior Accounts Officer – Embassy of Libya</li>
+            <li>Senior Credit Controller – Tecman</li>
+            <li>Accounts Officer – Ufone (PTML)</li>
+            <li>Audit Associate – KPMG</li>
+        </ul>
+    </div>
+
+    <h2>Education & Certifications</h2>
+    <div class="card">
+        <ul>
+            <li>ACCA (UK) Member</li>
+            <li>BSc (Hons) Applied Accounting – Oxford Brookes University</li>
+            <li>CAT-ACCA</li>
+        </ul>
+    </div>
+
+    <h2>Systems & Tools</h2>
+    <div class="card">
+        <p>SAP R/3, S4 | Oracle Hyperion | MS Dynamics | Business Central | Excel (Advanced) | Sage 50 | JD Edwards | Tally | Oracle | Xero</p>
+    </div>
+
+    <h2>Contact</h2>
+    <div class="card contact">
+        <p>Email: <a href="mailto:saad.mansoor1@outlook.com">saad.mansoor1@outlook.com</a></p>
+        <p>Phone: +44 743 682 8999</p>
+
+        <!-- Download Button -->
+        <a href="https://saadmansoor1ahmad-gif.github.io/CV/Saad%20Ahmad%20Resume.pdf" download class="download-btn">
+            Download CV (PDF)
+        </a>
+    </div>
+
 </section>
-287
- 
-288
-<section class="section" id="services">
-289
- 
-290
-<h2>Services</h2>
-291
- 
-292
-<div class="grid">
-293
- 
-294
-<div class="card">
-295
-<h3>Business Analysis</h3>
-296
-<p>Placeholder content.</p>
-297
-</div>
-298
- 
-299
-<div class="card">
-300
-<h3>Data Analytics</h3>
-301
-<p>Placeholder content.</p>
-302
-</div>
-303
- 
-304
-<div class="card">
-305
-<h3>Transformation</h3>
-306
-<p>Placeholder content.</p>
-307
-</div>
-308
- 
-309
-</div>
-310
- 
-311
-</section>
-312
- 
-313
-<section class="section" id="projects">
-314
- 
-315
-<h2>Projects</h2>
-316
- 
-317
-<div class="grid">
-318
- 
-319
-<div class="card">
-320
-<h3>Project One</h3>
-321
-<p>Placeholder content.</p>
-322
-</div>
-323
- 
-324
-<div class="card">
-325
-<h3>Project Two</h3>
-326
-<p>Placeholder content.</p>
-327
-</div>
-328
- 
-329
-<div class="card">
-330
-<h3>Project Three</h3>
-331
-<p>Placeholder content.</p>
-332
-</div>
-333
- 
-334
-</div>
-335
- 
-336
-</section>
-337
- 
-338
-<section class="section" id="contact">
-339
- 
-340
-<h2>Contact</h2>
-341
- 
-342
-<div class="card">
-343
-<h3>Let's Talk</h3>
-344
-<p>Your email here.</p>
-345
-</div>
-346
- 
-347
-</section>
-348
- 
-349
-<div class="footer">
-350
-© 2026 Saad Ahmad
-351
-</div>
-352
- 
-353
+
+<footer>
+    © 2026 Saad Ahmad – Finance Director | ACCA
+</footer>
+
 </body>
-354
 </html>
