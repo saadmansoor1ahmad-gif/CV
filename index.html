@@ -1,294 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saad Ahmad – Finance Director | ACCA</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background:
-                linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)),
-                url('https://wallpapercat.com/w/full/8/c/f/1421339-3840x2160-desktop-4k-city-skylines-background-image.jpg')
-                no-repeat center center fixed;
-            background-size: cover;
-            color: #222222;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saad Ahmad, ACCA — Finance Director</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12203A;
+    --paper:#F6F3EC;
+    --paper-line:#E4DFD1;
+    --gold:#A9834F;
+    --gold-dim:#C9AD82;
+    --slate:#3E5C76;
+    --charcoal:#232323;
+    --credit:#3E6B4F;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--charcoal);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold-dim); color:var(--ink);}
+  a{color:inherit;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 32px;}
 
-        /* Premium Header */
-        header {
-            background: linear-gradient(90deg, #0a0f24, #16335c);
-            color: white;
-            padding: 70px 20px 80px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-            border-bottom: 4px solid #4a6fa5;
-        }
-        header h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
-        }
-        header p {
-            font-size: 20px;
-            opacity: 0.9;
-        }
+  /* ---------- Header ---------- */
+  header.statement{
+    background:var(--ink);
+    color:var(--paper);
+    padding:64px 0 40px;
+    position:relative;
+  }
+  header.statement::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:0; height:6px;
+    background:repeating-linear-gradient(90deg, var(--gold) 0 14px, transparent 14px 22px);
+    opacity:.65;
+  }
+  .doc-meta{
+    display:flex; justify-content:space-between;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--gold-dim);
+    margin-bottom:36px;
+  }
+  h1.name{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(38px, 6vw, 62px);
+    line-height:1.03;
+    margin:0 0 14px;
+    letter-spacing:-.01em;
+  }
+  p.role{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px; letter-spacing:.04em;
+    color:var(--gold-dim);
+    margin:0 0 18px;
+    display:flex; flex-wrap:wrap; gap:0;
+  }
+  p.role span:not(:last-child)::after{content:"·"; margin:0 10px; color:var(--slate);}
+  p.geo{
+    font-size:14.5px;
+    color:#C7CCD6;
+    max-width:60ch;
+    line-height:1.5;
+    margin:0;
+  }
 
-        /* Layout */
-        section {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px 60px;
-            animation: fadeIn 1s ease-out;
-        }
+  /* ---------- Section scaffolding ---------- */
+  section{padding:52px 0;}
+  section + section{border-top:1px solid var(--paper-line);}
+  .label-row{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:26px;}
+  .sec-label{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold);}
+  .sec-num{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--slate);}
+  h2.sec-title{font-family:'Fraunces', serif; font-weight:500; font-size:28px; margin:0 0 26px; color:var(--ink);}
 
-        /* Section Headings */
-        h2 {
-            border-left: 5px solid #4a6fa5;
-            padding-left: 12px;
-            margin: 45px 0 20px;
-            font-size: 28px;
-            color: #dbe7ff;
-            letter-spacing: 0.3px;
-        }
+  /* ---------- Profile ---------- */
+  .profile-text{font-size:17.5px; line-height:1.68; max-width:70ch; color:var(--charcoal);}
+  .profile-text strong{color:var(--ink);}
 
-        /* Cards */
-        .card {
-            background: rgba(255, 255, 255, 0.82);
-            padding: 25px;
-            margin-bottom: 30px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.18);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.28);
-        }
+  /* ---------- Ledger strip (signature element) ---------- */
+  .ledger{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+    border:1px solid var(--paper-line);
+    background:#fff;
+  }
+  .ledger-item{padding:22px 18px; border-left:1px solid var(--paper-line); position:relative;}
+  .ledger-item:first-child{border-left:none;}
+  .ledger-item .amt{font-family:'IBM Plex Mono', monospace; font-size:24px; font-weight:500; color:var(--credit); display:block;}
+  .ledger-item .amt::before{content:"+"; margin-right:2px; opacity:.6;}
+  .ledger-item .desc{font-size:12.5px; color:var(--slate); line-height:1.4; margin-top:6px; display:block;}
 
-        .card p,
-        .card li {
-            color: #222222;
-            font-size: 16px;
-            line-height: 1.7;
-        }
+  /* ---------- Value proposition ---------- */
+  .value-list{list-style:none; margin:0; padding:0; border-top:1px solid var(--paper-line);}
+  .value-list li{
+    padding:16px 0; border-bottom:1px solid var(--paper-line);
+    display:flex; gap:18px; align-items:baseline; font-size:16px;
+  }
+  .value-list li::before{content:"§"; font-family:'IBM Plex Mono', monospace; color:var(--gold); font-size:13px; flex:0 0 auto;}
+  .value-list b{color:var(--ink); font-weight:600; margin-right:4px;}
 
-        h3 {
-            margin-top: 0;
-            margin-bottom: 12px;
-            color: #16335c;
-            font-size: 20px;
-        }
+  /* ---------- Experience (ledger entries) ---------- */
+  .entry{padding:26px 0; border-bottom:1px solid var(--paper-line); display:grid; grid-template-columns:150px 1fr; gap:24px;}
+  .entry:first-child{padding-top:0;}
+  .entry:last-child{border-bottom:none;}
+  .entry .period{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--slate); padding-top:4px; line-height:1.5;}
+  .entry .period .loc{display:block; color:var(--gold); margin-top:3px;}
+  .entry h3{font-family:'Fraunces', serif; font-weight:500; font-size:21px; margin:0 0 4px; color:var(--ink);}
+  .entry .org{font-size:13.5px; color:var(--gold); font-weight:500; margin-bottom:6px; display:block;}
+  .entry .blurb{font-size:14px; color:var(--slate); line-height:1.55; margin-bottom:14px; max-width:60ch;}
+  .entry ul{margin:0; padding:0; list-style:none;}
+  .entry li{position:relative; padding-left:18px; font-size:15px; line-height:1.55; margin-bottom:7px; color:var(--charcoal);}
+  .entry li::before{content:"—"; position:absolute; left:0; color:var(--gold-dim);}
 
-        ul {
-            margin: 0;
-            padding-left: 20px;
-        }
+  .earlier{margin-top:8px; padding-top:20px; border-top:1px dashed var(--paper-line);}
+  .earlier-title{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--slate); margin-bottom:14px;}
+  .earlier-block{padding:14px 0; border-bottom:1px solid var(--paper-line);}
+  .earlier-block:last-child{border-bottom:none;}
+  .earlier-head{display:flex; justify-content:space-between; font-size:14.5px; margin-bottom:6px;}
+  .earlier-head .co{color:var(--slate);}
+  .earlier-block ul{margin:0; padding:0; list-style:none;}
+  .earlier-block li{position:relative; padding-left:18px; font-size:13.5px; line-height:1.5; margin-bottom:4px; color:var(--charcoal);}
+  .earlier-block li::before{content:"—"; position:absolute; left:0; color:var(--gold-dim);}
 
-        /* Download Button */
-        .download-btn {
-            display: inline-block;
-            background: #6698de;
-            color: rgb(255, 255, 255);
-            padding: 12px 22px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
-        .download-btn:hover {
-            background: #1e2e71;
-            transform: translateY(-2px);
-            color: white;
-        }
+  /* ---------- Education / Systems two-col ---------- */
+  .twocol{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
+  .twocol h3.sub{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin:0 0 18px;}
+  .twocol ul{margin:0; padding:0; list-style:none;}
+  .twocol li{padding:10px 0; border-bottom:1px solid var(--paper-line); font-size:15px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{font-family:'IBM Plex Mono', monospace; font-size:12px; padding:6px 12px; background:#fff; border:1px solid var(--paper-line); color:var(--ink);}
 
-        /* Footer */
-        footer {
-            background: #0a0f24;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 20px;
-            font-size: 14px;
-            letter-spacing: 0.3px;
-            border-top: 3px solid #4a6fa5;
-        }
+  /* ---------- Additional info / trainings ---------- */
+  .infogrid{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
+  .kv{display:grid; grid-template-columns:110px 1fr; gap:10px; padding:10px 0; border-bottom:1px solid var(--paper-line); font-size:14.5px;}
+  .kv .k{font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--slate);}
+  .train-list{columns:2; column-gap:32px; margin:0; padding:0; list-style:none;}
+  .train-list li{
+    font-size:13.5px; line-height:1.5; padding:9px 0; border-bottom:1px solid var(--paper-line);
+    break-inside:avoid;
+  }
+  .train-list .co{color:var(--slate); font-size:12px;}
 
-        .contact a {
-            color: #273067;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        .contact a:hover {
-            text-decoration: underline;
-        }
+  /* ---------- Footer / contact ---------- */
+  footer{background:var(--ink); color:var(--paper); padding:56px 0 40px;}
+  footer .sec-label{color:var(--gold-dim);}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr auto; gap:24px; align-items:center; margin-top:22px;}
+  .contact-item{font-family:'IBM Plex Mono', monospace; font-size:15px;}
+  .contact-item a{text-decoration:none; border-bottom:1px solid var(--slate); padding-bottom:2px;}
+  .contact-item a:hover{border-color:var(--gold);}
+  .cta{
+    justify-self:end; display:inline-block; padding:14px 26px;
+    background:var(--gold); color:var(--ink);
+    font-family:'IBM Plex Mono', monospace; font-size:13px; font-weight:500;
+    text-decoration:none; letter-spacing:.04em; white-space:nowrap;
+    transition:background .15s ease;
+  }
+  .cta:hover{background:var(--gold-dim);}
+  .fine{
+    margin-top:44px; padding-top:24px; border-top:1px solid rgba(246,243,236,.15);
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--slate);
+  }
 
-        /* Fade-in animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+  /* ---------- Responsive ---------- */
+  @media (max-width:680px){
+    .wrap{padding:0 20px;}
+    header.statement{padding:44px 0 32px;}
+    .doc-meta{flex-direction:column; gap:6px; margin-bottom:24px;}
+    .entry{grid-template-columns:1fr; gap:6px;}
+    .twocol, .infogrid{grid-template-columns:1fr; gap:32px;}
+    .contact-grid{grid-template-columns:1fr; gap:16px;}
+    .cta{justify-self:start;}
+    .earlier-head{flex-direction:column; gap:2px;}
+    .train-list{columns:1;}
+  }
 
-        /* TABLET */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 34px;
-            }
-            header p {
-                font-size: 16px;
-            }
-            h2 {
-                font-size: 22px;
-                margin: 30px 0 15px;
-            }
-            .card {
-                padding: 18px;
-                border-radius: 10px;
-            }
-            .card p,
-            .card li {
-                font-size: 15px;
-            }
-            h3 {
-                font-size: 18px;
-            }
-            section {
-                padding: 0 15px 40px;
-            }
-        }
-
-        /* MOBILE */
-        @media (max-width: 480px) {
-            header {
-                padding: 50px 15px 60px;
-            }
-            header h1 {
-                font-size: 28px;
-            }
-            header p {
-                font-size: 14px;
-            }
-            .card {
-                padding: 15px;
-            }
-            h2 {
-                font-size: 20px;
-            }
-            h3 {
-                font-size: 16px;
-            }
-        }
-    </style>
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+</style>
 </head>
-
 <body>
 
-<header>
-    <h1>Saad Ahmad, ACCA</h1>
-    <p>Finance Director | CFO-Level Leader | FP&A | Governance | Transformation</p>
+<header class="statement">
+  <div class="wrap">
+    <div class="doc-meta">
+      <span>Statement of Experience</span>
+      <span>Prepared 2026</span>
+    </div>
+    <h1 class="name">Saad Ahmad</h1>
+    <p class="role"><span>ACCA</span><span>Finance Director</span><span>18+ Yrs Experience</span><span>EMEA</span></p>
+    <p class="geo">British national based in the UK. Finance leader across manufacturing, technology, telecoms and services — from startups to multinational organisations.</p>
+  </div>
 </header>
 
-<section>
-    <h2>Executive Profile</h2>
-    <div class="card">
-        <p>Strategic CFO with over 18 years’ experience leading M&A, multinational scale‑ups and enterprise‑wide transformation. I partner with Boards to drive sustainable growth, embed financial discipline, and strengthen performance management frameworks that enable data‑driven decision‑making and long‑term value creation. </p>
-    </div>
-
-    <h2>Value Proposition</h2>
-    <div class="card">
-        <ul>
-            <li>Strategic Leadership & Business Partnering</li>
-            <li>Performance Management (FP&A) & Restructuring</li>
-            <li>Governance, Assurance, Risk & Compliance</li>
-            <li>Cash, Treasury & Investment</li>
-            <li>Transformation & Systems (SAP, MS Dynamics, SAGE)</li>
-        </ul>
-    </div>
-
-    <h2>Professional Experience</h2>
-
-    <div class="card">
-        <h3>Finance Director – Mondi Birmingham Ltd (2022–Present)</h3>
-        <ul>
-            <li>Led financial merger and integration with Mondi Group</li>
-            <li>Recruited & trained finance, costing and FP&A teams</li>
-            <li>Built management accounts & forecasting pack</li>
-            <li>Managed CAPEX £30m+ and treasury operations</li>
-            <li>Integrated ERP, MS Dynamics & Linux systems via APIs</li>
-            <li>Converted financial statements from UK GAAP to IFRS</li>
-            <li>Achieved clean audits throughout tenure</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>Management Accountant – Q Care Ltd (2019–2021)</h3>
-        <ul>
-            <li>Produced monthly management accounts with actionable insights</li>
-            <li>Delivered GP, margin & cost analysis</li>
-            <li>Unlocked £200k savings through ERP optimisation</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>Finance Manager – Trakker Middle East (2018–2019)</h3>
-        <ul>
-            <li>Oversight for enterprise clients incl. ADNOC & OPAL</li>
-            <li>Delivered 10% annual cost of sales savings</li>
-            <li>Designed ERP finance module securing $250k funding</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>Finance Manager – N.E.T.S (2016–2018)</h3>
-        <ul>
-            <li>Built financial models for ROI & funding scenarios</li>
-            <li>Applied forensic accounting to strengthen controls</li>
-            <li>Tracked performance across $500m project portfolio</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>Earlier Roles</h3>
-        <ul>
-            <li>Senior Accounts Officer – Embassy of Libya</li>
-            <li>Senior Credit Controller – Tecman</li>
-            <li>Accounts Officer – Ufone (PTML)</li>
-            <li>Audit Associate – KPMG</li>
-        </ul>
-    </div>
-
-    <h2>Education & Certifications</h2>
-    <div class="card">
-        <ul>
-            <li>ACCA (UK) Member</li>
-            <li>BSc (Hons) Applied Accounting – Oxford Brookes University</li>
-            <li>CAT-ACCA</li>
-        </ul>
-    </div>
-
-    <h2>Systems & Tools</h2>
-    <div class="card">
-        <p>SAP R/3, S4 | Oracle Hyperion | MS Dynamics | Business Central | Excel (Advanced) | Sage 50 | JD Edwards | Tally | Oracle | Xero</p>
-    </div>
-
-    <h2>Contact</h2>
-    <div class="card contact">
-        <p>Email: <a href="mailto:saad.mansoor1@outlook.com">saad.mansoor1@outlook.com</a></p>
-        <p>Phone: +44 743 682 8999</p>
-
-        <!-- Download Button -->
-        <a href="https://saadmansoor1ahmad-gif.github.io/CV/Saad%20Ahmad%20Resume.pdf" download class="download-btn">
-            Download CV (PDF)
-        </a>
-    </div>
-
+<section id="profile">
+  <div class="wrap">
+    <div class="label-row"><span class="sec-label">Executive Profile</span><span class="sec-num">01</span></div>
+    <p class="profile-text">
+      Strategic, results-driven, commercial-minded finance leader with <strong>18+ years' experience</strong> across manufacturing, technology, telecoms and services, spanning startups to multinational organisations across EMEA. Proven track record in board-level business partnering, FP&amp;A, governance, and financial transformation — delivering measurable improvements in profitability, cashflow and control. Experienced in leading finance functions through ERP and organisational change, strengthening accountability, and enabling data-led decision-making. Trusted adviser to MDs and Boards, combining commercial insight with strong regulatory and risk discipline.
+    </p>
+  </div>
 </section>
 
-<footer>
-    © 2026 Saad Ahmad – Finance Director | ACCA
+<section id="record">
+  <div class="wrap">
+    <div class="label-row"><span class="sec-label">Key Achievements</span><span class="sec-num">02</span></div>
+    <div class="ledger">
+      <div class="ledger-item"><span class="amt">£26m</span><span class="desc">Asset funding secured via consortium-based structure</span></div>
+      <div class="ledger-item"><span class="amt">£0.8m</span><span class="desc">HMRC recovery through tax planning</span></div>
+      <div class="ledger-item"><span class="amt">£1.2m</span><span class="desc">Recurring annual savings from cost restructuring</span></div>
+      <div class="ledger-item"><span class="amt">£280k</span><span class="desc">Revenue leakage recovered via forensic review</span></div>
+      <div class="ledger-item"><span class="amt">22%</span><span class="desc">YoY sales growth (£8m) supported by strengthened controls</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="value">
+  <div class="wrap">
+    <div class="label-row"><span class="sec-label">Finance Director / CFO Value Proposition</span><span class="sec-num">03</span></div>
+    <ul class="value-list">
+      <li><span><b>Strategic Leadership &amp; Business Partnering</b> — Board and executive decision support; translating operational performance into financial outcomes</span></li>
+      <li><span><b>Performance Management (FP&amp;A)</b> — Budgeting, forecasting, KPI frameworks, margin and revenue channel analysis</span></li>
+      <li><span><b>Governance, Risk &amp; Compliance</b> — Internal controls, audits, fraud detection, IFRS, VAT and corporation tax</span></li>
+      <li><span><b>Cash, Treasury &amp; Investment</b> — Working capital optimisation, FX exposure, capital investment and funding</span></li>
+      <li><span><b>Transformation &amp; Systems</b> — ERP leadership (SAP, MS Dynamics, SAGE), automation and data integration</span></li>
+      <li><span><b>Mergers &amp; Acquisitions</b> — Led financial due diligence on multiple EMEA acquisitions with successful post-merger integration</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="label-row"><span class="sec-label">Professional Experience</span><span class="sec-num">04</span></div>
+
+    <div class="entry">
+      <div class="period">Jan 2022 — Present<span class="loc">Mondi Birmingham Ltd, UK</span></div>
+      <div>
+        <h3>Finance Director</h3>
+        <span class="org">Promoted from Head of Finance to FD</span>
+        <p class="blurb">Leading the finance function of a manufacturing business within a multinational group, partnering with the MD and Board to drive financial performance, governance and strategic execution.</p>
+        <ul>
+          <li>Led the financial merger of the Schumacher business and subsequent integration with Mondi Group</li>
+          <li>Led the acquisition of multiple companies within the Mondi group (previously Schumacher)</li>
+          <li>Restructured the finance team and streamlined month-end close, cutting reporting from Day 9 to Day 1, with consolidated FS presented on Day 3</li>
+          <li>Built a robust monthly management accounts and forecasting pack</li>
+          <li>Managed CAPEX budget with treasury and funding to secure assets worth £30m+</li>
+          <li>Led the treasury department, building a rolling 15-week cashflow forecast</li>
+          <li>Led annual budgets and medium-term plans (2022–2026), embedding daily operational KPIs</li>
+          <li>Led finance workstreams for ERP, supply chain and Payroll &amp; HR system transformations</li>
+          <li>Integrated ERP, MS Dynamics and Linux systems via APIs to improve data integrity and efficiency</li>
+          <li>Reworked pricing and costing methodology, helping price tenders worth £30m+</li>
+          <li>Oversaw VAT, corporation tax, statutory accounts and external audits, converting Financial Statements from UK GAAP to IFRS</li>
+          <li>Achieved clean audits throughout tenure</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="period">Dec 2019 — Dec 2021<span class="loc">Q Care Ltd, UK</span></div>
+      <div>
+        <h3>Management Accountant</h3>
+        <span class="org">Reported to the MD, part of the strategic management team</span>
+        <ul>
+          <li>Produced monthly management accounts with actionable insight for the MD and SMT</li>
+          <li>Delivered GP, margin and cost analysis with board-ready reporting packs</li>
+          <li>Built P&amp;L reporting by service run, significantly improving operational visibility</li>
+          <li>Delivered cost-management training for operational managers, embedding financial ownership</li>
+          <li>Worked with ERP providers to unlock underused data, delivering £200k savings</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="period">Feb 2018 — Aug 2019<span class="loc">Trakker Middle East, Dubai</span></div>
+      <div>
+        <h3>Finance Manager</h3>
+        <span class="org">Managed a finance team of 10</span>
+        <ul>
+          <li>Financial oversight for large enterprise clients including ADNOC and OPAL</li>
+          <li>Implemented cost reduction initiatives delivering 10% annual cost-of-sales savings</li>
+          <li>Designed a bespoke ERP finance module, securing $250k low-risk development funding</li>
+          <li>Owned IFRS reporting, VAT, audit coordination and Board reporting</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="period">Feb 2016 — Jan 2018<span class="loc">N.E.T.S, Dubai</span></div>
+      <div>
+        <h3>Finance Manager</h3>
+        <span class="org">Promoted from Project Accountant</span>
+        <ul>
+          <li>Built financial models covering funding scenarios, ROI and project risk</li>
+          <li>Delivered cost-benefit analysis and investment appraisals</li>
+          <li>Applied forensic accounting techniques to uncover control weaknesses and prevent recurrence</li>
+          <li>Tracked financial performance across a $500m construction project portfolio</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="earlier">
+      <div class="earlier-title">Earlier Roles</div>
+
+      <div class="earlier-block">
+        <div class="earlier-head"><span>Senior Accounts Officer — Embassy of Libya</span><span class="co">Jul 2012 – Dec 2015</span></div>
+        <ul>
+          <li>Managed financial liaison with senior government officials and diplomats</li>
+          <li>Maintained strict document control and custody of sensitive financial records</li>
+          <li>Managed budgeting, AR/AP, fixed assets, cash, payroll and general ledger</li>
+        </ul>
+      </div>
+
+      <div class="earlier-block">
+        <div class="earlier-head"><span>Senior Credit Controller — Tecman</span><span class="co">Islamabad · Nov 2010 – May 2012</span></div>
+        <ul>
+          <li>Managed high-volume customer ledger and legal recovery actions</li>
+          <li>Ran monthly credit reviews and bank reconciliations</li>
+          <li>Set team targets and negotiated repayment plans</li>
+        </ul>
+      </div>
+
+      <div class="earlier-block">
+        <div class="earlier-head"><span>Accounts Officer — Ufone (PTML)</span><span class="co">Islamabad · Jan 2008 – Oct 2010</span></div>
+        <ul>
+          <li>Supported nationwide revenue and franchise performance analysis</li>
+          <li>Worked with developers to enhance reporting through PL/SQL interfaces</li>
+        </ul>
+      </div>
+
+      <div class="earlier-block">
+        <div class="earlier-head"><span>Audit Associate — KPMG</span><span class="co">Islamabad · Jan 2007 – Dec 2007</span></div>
+        <ul>
+          <li>Supported statutory audits for multi-million-dollar clients across investment, telecoms and regulatory sectors</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="creds">
+  <div class="wrap">
+    <div class="label-row"><span class="sec-label">Education &amp; Systems</span><span class="sec-num">05</span></div>
+    <div class="twocol">
+      <div>
+        <h3 class="sub">Education &amp; Certifications</h3>
+        <ul>
+          <li>ACCA (UK) Member</li>
+          <li>BSc (Hons) Applied Accounting — Oxford Brookes University</li>
+          <li>CAT‑ACCA</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="sub">Systems &amp; Tools</h3>
+        <div class="chips">
+          <span class="chip">SAP R/3, S4</span>
+          <span class="chip">MS Dynamics</span>
+          <span class="chip">Business Central</span>
+          <span class="chip">Excel (Advanced)</span>
+          <span class="chip">Sage 50</span>
+          <span class="chip">JD Edwards</span>
+          <span class="chip">Tally</span>
+          <span class="chip">Oracle</span>
+          <span class="chip">Xero</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="extra">
+  <div class="wrap">
+    <div class="label-row"><span class="sec-label">Additional Information</span><span class="sec-num">06</span></div>
+    <div class="infogrid">
+      <div>
+        <div class="kv"><span class="k">Nationality</span><span>British</span></div>
+        <div class="kv"><span class="k">Languages</span><span>English, Urdu, Punjabi, Arabic (basic)</span></div>
+        <div class="kv"><span class="k">Driving</span><span>UK, UAE, KSA, PK, USA</span></div>
+        <div class="kv"><span class="k">Notice</span><span>6 months (negotiable)</span></div>
+      </div>
+      <div>
+        <h3 class="sub" style="margin-bottom:14px;">Trainings</h3>
+        <ul class="train-list">
+          <li>Office 365 – RMS <span class="co">Microsoft Learning Partner</span></li>
+          <li>Oracle Hyperion <span class="co">Oracle</span></li>
+          <li>SAP ERP/FMS <span class="co">Ufone PTML</span></li>
+          <li>Commerce Strategy <span class="co">Goal Intl</span></li>
+          <li>Certified Mentor: B2B Products <span class="co">Etisalat</span></li>
+          <li>Financial Instruments <span class="co">Efu Insurance</span></li>
+          <li>Advanced Excel <span class="co">Goal Intl</span></li>
+          <li>MS Dynamics <span class="co">Azzure IT</span></li>
+          <li>Sage 50 Cloud <span class="co">Sage</span></li>
+          <li>MS Business Central Accounting <span class="co">Advania</span></li>
+          <li>SAP S4 HANA <span class="co">SAP</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <span class="sec-label">Contact</span>
+    <div class="contact-grid">
+      <div class="contact-item"><a href="mailto:saad.mansoor1@outlook.com">saad.mansoor1@outlook.com</a></div>
+      <div class="contact-item"><a href="tel:+447436828999">+44 743 682 8999</a></div>
+      <a class="cta" href="Saad%20Ahmad%20Resume.pdf">Download CV (PDF) →</a>
+    </div>
+    <div class="fine">© 2026 Saad Ahmad — Finance Director | ACCA</div>
+  </div>
 </footer>
 
 </body>
